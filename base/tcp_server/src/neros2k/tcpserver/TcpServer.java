@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.Scanner;
 public class TcpServer {
     public static void main(String[] ARGS) throws IOException {
-	    ServerSocket SERVER_SOCKET = new ServerSocket(50001);
+	ServerSocket SERVER_SOCKET = new ServerSocket(50001);
         Scanner CONSOLE_SCANNER = new Scanner(System.in);
         Socket SOCKET = null;
         while(true) {
