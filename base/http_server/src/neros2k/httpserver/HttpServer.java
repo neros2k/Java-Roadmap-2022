@@ -18,7 +18,7 @@ public class HttpServer {
                         try {
                             SOCKET = SERVER_SOCKET.accept();
                             OUTPUT_STREAM = SOCKET.getOutputStream();
-                        } catch (IOException EXCEPTION) { EXCEPTION.printStackTrace(); }
+                        } catch(IOException EXCEPTION) { EXCEPTION.printStackTrace(); }
                     }
                     @Override
                     public void run() {
@@ -32,10 +32,10 @@ public class HttpServer {
                             String RESULT = RESPONSE + HTML_STR;
                             OUTPUT_STREAM.write(RESULT.getBytes());
                             OUTPUT_STREAM.flush();
-                        } catch (Throwable ignored) {} finally {
+                        } catch(Throwable ignored) {} finally {
                             try {
                                 SOCKET.close();
-                            } catch (Throwable ignored) {}
+                            } catch(Throwable ignored) {}
                         }
                     }
                 }.start(), 0, 1, TimeUnit.NANOSECONDS
